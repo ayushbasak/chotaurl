@@ -6,15 +6,17 @@ import Main from './components/Main.components'
 import Footer from './components/Footer.components'
 
 const App = ()=>{
+  // current value of URL input
   const [curr, setCurr] = useState('')
+  // final shortened URL
   const [final, setFinal] = useState('')
+  
   const handleInputChange = (e)=>{
     console.log(e.target.value)
     setCurr(e.target.value)
   }
 
   const postURL = async ()=>{
-    console.log(curr)
     const result = await axios.post('https://ctlnk.herokuapp.com/', {"url": curr})
                             .catch(err => console.log(err))
     if(result === undefined){
@@ -28,6 +30,7 @@ const App = ()=>{
   }
   const copy = ()=>{
     navigator.clipboard.writeText(final)
+    window.open(final, "_blank")
   }
 
   return (
