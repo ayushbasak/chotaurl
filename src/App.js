@@ -12,7 +12,6 @@ const App = ()=>{
   const [final, setFinal] = useState('')
   
   const handleInputChange = (e)=>{
-    console.log(e.target.value)
     setCurr(e.target.value)
   }
 
