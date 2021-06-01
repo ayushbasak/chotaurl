@@ -8,15 +8,27 @@ import Footer from './components/Footer.components'
 const App = ()=>{
   // current value of URL input
   const [curr, setCurr] = useState('')
+  // flavor
+  const [flavor, setFlavor] = useState('')
   // final shortened URL
   const [final, setFinal] = useState('')
-  
+  // const [enableFlavor, setEnableFlavor] = useState(true)
   const handleInputChange = (e)=>{
     setCurr(e.target.value)
   }
-
+  const handleFlavorChange = (e)=>{
+    let temp = e.target.value
+    if(temp.length > 20)
+      temp = temp.substring(0, 20)
+    setFlavor(temp)
+  }
   const postURL = async ()=>{
-    const result = await axios.post('https://ctlnk.herokuapp.com/', {"url": curr})
+    const save = {"url": curr}
+    if(flavor !== "")
+      save['flavor'] = flavor
+    
+      console.log(save)
+    const result = await axios.post('https://ctlnk.herokuapp.com', save)
                             .catch(err => console.log(err))
     if(result === undefined){
       return
@@ -35,7 +47,8 @@ const App = ()=>{
   return (
     <div className="h-screen">
       <Navbar />
-      <Main chandler={handleInputChange} post={postURL} final={final} copy={copy}/>
+      <Main chandler={handleInputChange} flavorHandler = {handleFlavorChange}
+       post={postURL} final={final} copy={copy} flavor={flavor}/>
       <Footer />
     </div>
   );
