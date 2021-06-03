@@ -11,7 +11,7 @@ const App = ()=>{
   // flavor
   const [flavor, setFlavor] = useState('')
   // final shortened URL
-  const [final, setFinal] = useState('')
+  const [final, setFinal] = useState(null)
   // const [enableFlavor, setEnableFlavor] = useState(true)
   const handleInputChange = (e)=>{
     setCurr(e.target.value)
@@ -23,6 +23,7 @@ const App = ()=>{
     setFlavor(temp)
   }
   const postURL = async ()=>{
+    setFinal('')
     const save = {"url": curr}
     if(flavor !== "")
       save['flavor'] = flavor

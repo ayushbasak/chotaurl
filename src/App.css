@@ -36,3 +36,41 @@
     transform: rotate(360deg);
   }
 } */
+#loading{
+  padding:2px 5rem;
+  animation-name: loading;
+  animation-duration: .2s;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-radius: 30px;
+  transition: .07s;
+  -moz-animation-iteration-count: infinite;
+}
+@keyframes loading {
+  0% {
+    border-top-color: white;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+  }
+  25% {
+    border-top-color: transparent;
+    border-left-color: white;
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+  }
+  50% {
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-bottom-color: white;
+    border-right-color: transparent;
+  }
+  75% {
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    border-right-color: white;
+  }
+}
