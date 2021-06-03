@@ -1,6 +1,6 @@
 # ChotaURL 
 ***
-### React Web Appl using the [ChotaURL-api](https://github.com/ayushbasak/chotaurl-api)
+### React Web App using the [ChotaURL-api](https://github.com/ayushbasak/chotaurl-api)
 
 ![ss1](extras/ss-large.png)
 ![ss2](extras/ss-small.png)
