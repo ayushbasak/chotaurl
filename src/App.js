@@ -12,7 +12,9 @@ const App = ()=>{
   const [flavor, setFlavor] = useState('')
   // final shortened URL
   const [final, setFinal] = useState(null)
-  // const [enableFlavor, setEnableFlavor] = useState(true)
+  
+  const [validity, setValidity] = useState(0)
+
   const handleInputChange = (e)=>{
     setCurr(e.target.value)
   }
@@ -34,10 +36,13 @@ const App = ()=>{
     if(result === undefined){
       return
     }
-    if(result.data.errorId === 2 || result.data.errorId === 1)
+    if(result.data.errorId === 2 || result.data.errorId === 1){
       setFinal(result.data.error)
+      setValidity(0)
+    }
     else{
       setFinal(result.data.shortenedURL)
+      setValidity(result.data.epoch)
     }
   }
   const copy = ()=>{
@@ -49,7 +54,7 @@ const App = ()=>{
     <div className="h-screen">
       <Navbar />
       <Main chandler={handleInputChange} flavorHandler = {handleFlavorChange}
-       post={postURL} final={final} copy={copy} flavor={flavor}/>
+       post={postURL} final={final} copy={copy} flavor={flavor} validity={validity}/>
       <Footer />
     </div>
   );

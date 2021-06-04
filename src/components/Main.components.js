@@ -1,7 +1,8 @@
 import '../../public/copy.svg'
 import  About from './About.components'
 import Loading from './Loading.components'
-const Main = ({enabled, chandler, flavorHandler, post, final, copy, flavor})=>{
+import Validity from './Validity.components';
+const Main = ({enabled, chandler, flavorHandler, post, final, copy, flavor, validity})=>{
     return (
         <div className="flex flex-col lg:flex-row jusitify-between items-evenly p-2 bg-white h-auto lg:h-4/6">
             <About />
@@ -18,6 +19,9 @@ const Main = ({enabled, chandler, flavorHandler, post, final, copy, flavor})=>{
                     </span>
                     <img src="copy.svg" alt = "copy" className="mx-5 w-10 h-10 p-3 cursor-pointer hover:bg-yellow-300 rounded-xl" onClick={copy}></img>
                 </span>
+                {validity !== 0 ?
+                    <Validity validity = {validity}/> : ''
+                }
             </div>
         </div>
     );
