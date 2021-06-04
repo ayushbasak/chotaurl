@@ -19,7 +19,7 @@ const App = ()=>{
     setCurr(e.target.value)
   }
   const handleFlavorChange = (e)=>{
-    let temp = e.target.value
+    let temp = e.target.value.trim()
     if(temp.length > 20)
       temp = temp.substring(0, 20)
     setFlavor(temp)
@@ -54,7 +54,8 @@ const App = ()=>{
     <div className="h-screen">
       <Navbar />
       <Main chandler={handleInputChange} flavorHandler = {handleFlavorChange}
-       post={postURL} final={final} copy={copy} flavor={flavor} validity={validity}/>
+       post={postURL} final={final} copy={copy} flavor={flavor}
+        validity={validity}/>
       <Footer />
     </div>
   );
