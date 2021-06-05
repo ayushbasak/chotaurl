@@ -74,22 +74,3 @@
     border-right-color: white;
   }
 }
-
-#main-body{
-  animation-name: back;
-  animation-duration: 10s;
-  -moz-animation-iteration-count: infinite;
-  transition: 0.1s;
-}
-
-@keyframes back {
-  0% {
-    background-color: #a6fff5;
-  }
-  50% {
-    background-color: #ffb5fd;
-  }
-  100%{
-    background-color: #a6fff5;
-  }
-}

@@ -4,7 +4,7 @@ import Loading from './Loading.components'
 import Validity from './Validity.components';
 const Main = ({curr, chandler, flavorHandler, post, final, copy, flavor, validity})=>{
     return (
-        <div id="main-body" className="flex flex-col lg:flex-row jusitify-between items-evenly p-2 h-auto lg:h-4/6">
+        <div className="flex flex-col lg:flex-row jusitify-between items-evenly p-2 h-auto lg:h-4/6">
             <About />
             <div className="flex flex-col w-full justify-center items-center">
                 <span className ="shadow bg-gray-800 text-white w-11/12 lg:w-5/12 py-4 m-2 text-center rounded border-l-8 border-red-400">Your URL</span>
