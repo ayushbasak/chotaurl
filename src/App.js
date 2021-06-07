@@ -4,6 +4,9 @@ import { useState } from 'react'
 import Navbar from './components/Navbar.components'
 import Main from './components/Main.components'
 import Footer from './components/Footer.components'
+import Metrics from './components/Metrics.components'
+
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 
 const App = ()=>{
   // current value of URL input
@@ -53,10 +56,21 @@ const App = ()=>{
   return (
     <div className="h-screen">
       <Navbar />
-      <Main chandler={handleInputChange} flavorHandler = {handleFlavorChange}
-       post={postURL} final={final} copy={copy} flavor={flavor}
-        validity={validity}/>
-      <Footer />
+      <Router>
+        <>
+          <Switch>
+            <Route path='/metrics'>
+                <Metrics />
+            </Route>
+            <Route path='/'>
+              <Main chandler={handleInputChange} flavorHandler = {handleFlavorChange}
+                    post={postURL} final={final} copy={copy} flavor={flavor}
+                      validity={validity}/>
+            </Route>
+          </Switch>
+          </>
+        <Footer />
+      </Router>
     </div>
   );
 }
