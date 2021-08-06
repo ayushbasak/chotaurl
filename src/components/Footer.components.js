@@ -9,9 +9,6 @@ const Footer = ()=>{
                 <Link to='/'>
                     <span className="m-2 p-2 hover:bg-gray-800 font-bold text-white rounded-lg">Home</span>
                 </Link>
-                <Link to='/User'>
-                <span className="m-2 p-2 hover:bg-gray-800 font-bold text-white rounded-lg">User</span>
-                </Link>
             </div>
             <span className="text-lg text-white m-6 lg:m-0">made with ♥ by  
                 <a  className ="font-bold m-1 p-2 hover:bg-gray-800 rounded-lg"  href ="https://github.com/ayushbasak/">@ayushbasak</a>

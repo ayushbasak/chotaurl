@@ -5,7 +5,6 @@ import Navbar from './components/Navbar.components'
 import Main from './components/Main.components'
 import Footer from './components/Footer.components'
 import Metrics from './components/Metrics.components'
-import User from './components/User.components'
 
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 
@@ -62,9 +61,6 @@ const App = ()=>{
           <Switch>
             <Route path='/metrics'>
                 <Metrics />
-            </Route>
-            <Route path= "/user">
-                <User />
             </Route>
             <Route path='/'>
               <Main chandler={handleInputChange} flavorHandler = {handleFlavorChange}
