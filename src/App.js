@@ -56,8 +56,8 @@ const App = ()=>{
 
   return (
     <div className="h-screen">
-      <Navbar />
       <Router>
+        <Navbar />
         <>
           <Switch>
             <Route path='/metrics'>
