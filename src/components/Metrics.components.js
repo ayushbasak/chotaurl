@@ -24,22 +24,22 @@ const Metrics = ()=>{
         <>
         {
            (chotaURLcount >= 0 || pastebinCount >= 0) ? 
-            <div className="flex flex-col lg:flex-row h-4/6 justify-evenly items-center">
-                <div className="flex flex-col w-full justify-evenly items-center">
+            <div className="flex flex-col lg:flex-row  justify-evenly items-center lg:h-4/6">
+                <div className="flex flex-col w-full justify-evenly items-center h-full">
                     <span className ="shadow bg-gray-800 text-white w-11/12 lg:w-8/12 py-4 m-2 text-center rounded border-l-8 border-red-400">ChotaURL</span>
-                        <p className="text-5xl bg-green-400 p-5 m-2 w-11/12 lg:w-8/12 rounded-xl text-white shadow-xl text-center">{chotaURLcount} entr{chotaURLcount === 1 ? 'y' : 'ies'}</p>
-                        <div className="overflow-auto h-4/6 w-full lg:w-8/12 p-2 bg-blue-800 text-center lg:rounded-xl shadow-xl">
-                            <span className="text-white text-2xl bg-red-400 p-4 rounded-xl flex flex-col justify-center items-center">{hostNames.length} domains</span>
-                                {
-                                    
-                                    hostNames.map(curr =>
-                                        <span className="flex flex-row flex flex-row justify-left items-center p-1">
-                                            <img src={`https://${curr}/favicon.ico`} className="w-5 h-5 m-2 mx-5 bg-white-200" alt="N"/>
-                                            <span className="text-white text-center select-none">{curr}</span>    
-                                        </span>
-                                    )
-                                }
-                        </div>
+                    <p className="text-5xl bg-green-400 p-5 m-2 w-11/12 lg:w-8/12 rounded-xl text-white shadow-xl text-center">{chotaURLcount} entr{chotaURLcount === 1 ? 'y' : 'ies'}</p>
+                    <div className= "h-48 lg:h-auto overflow-y-scroll m-1 w-11/12 lg:w-8/12 p-2 bg-green-800 text-center rounded-xl shadow-xl">
+                        <span className="text-white text-2xl bg-yellow-600 p-4 rounded-xl flex flex-col justify-center items-center">{hostNames.length} domains</span>
+                        {
+                            
+                            hostNames.map(curr =>
+                                <span className="flex flex-row flex flex-row justify-left items-center p-1">
+                                    <img src={`https://${curr}/favicon.ico`} className="w-5 h-5 m-2 mx-5 bg-white-200" alt="N"/>
+                                    <span className="text-white text-center select-none">{curr}</span>    
+                                </span>
+                            )
+                        }
+                    </div>
                 </div>
                 <div className = "flex flex-col w-full justify-evenly items-center">
                     <span className ="shadow bg-gray-800 text-white w-11/12 lg:w-8/12 py-4 m-2 text-center rounded border-l-8 border-red-400">Pastebin</span>
