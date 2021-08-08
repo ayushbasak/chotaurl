@@ -7,8 +7,12 @@ const Footer = ()=>{
                     <span className="m-6 p-2 hover:bg-gray-800 font-bold text-white rounded-lg">Metrics</span>
                 </Link>
                 <Link to='/'>
-                    <span className="m-2 p-2 hover:bg-gray-800 font-bold text-white rounded-lg">Home</span>
+                    <span className="m-2 p-2 hover:bg-gray-800 font-bold text-white rounded-lg">ChotaURL</span>
                 </Link>
+                <Link to='/Pastebin'>
+                    <span className="m-2 p-2 hover:bg-gray-800 font-bold text-white rounded-lg">Pastebin</span>
+                </Link>
+                
             </div>
             <span className="text-lg text-white m-6 lg:m-0">made with ♥ by  
                 <a  className ="font-bold m-1 p-2 hover:bg-gray-800 rounded-lg"  href ="https://github.com/ayushbasak/">@ayushbasak</a>

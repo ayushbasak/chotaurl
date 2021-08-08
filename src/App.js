@@ -2,11 +2,12 @@ import './App.css';
 import axios from 'axios'
 import { useState } from 'react'
 import Navbar from './components/Navbar.components'
-import Main from './components/Main.components'
+import Main from './components/ChotaURL.components'
 import Footer from './components/Footer.components'
 import Metrics from './components/Metrics.components'
 
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import Pastebin from './components/Pastebin.components';
 
 const App = ()=>{
   // current value of URL input
@@ -34,7 +35,7 @@ const App = ()=>{
       save['flavor'] = flavor
     
       console.log(save)
-    const result = await axios.post('https://ctlnk.herokuapp.com', save)
+    const result = await axios.post('https://ctlnk.herokuapp.com/q/', save)
                             .catch(err => console.log(err))
     if(result === undefined){
       return
@@ -61,6 +62,9 @@ const App = ()=>{
           <Switch>
             <Route path='/metrics'>
                 <Metrics />
+            </Route>
+            <Route path='/Pastebin' exact>
+                <Pastebin />
             </Route>
             <Route path='/'>
               <Main chandler={handleInputChange} flavorHandler = {handleFlavorChange}
