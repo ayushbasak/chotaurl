@@ -63,6 +63,18 @@ const Pastebin = ()=>{
         navigator.clipboard.writeText(recievedURL)
     }
 
+    const downloadPastebin = ()=>{
+        const newText = `${readbinTitle}\n\n${readbinContent}`;
+        const blob = new Blob([newText], {type: 'text/plain'});
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `chotaurl-pastebin-${readbinLink}.txt`;
+        a.click();
+        URL.revokeObjectURL(url);
+        // document.removeChild(a);
+    }
+
     return (
         <>
         <div className="flex flex-col lg:flex-row jusitify-between items-evenly p-2 h-auto lg:h-screen">
@@ -94,6 +106,10 @@ const Pastebin = ()=>{
                 <button onClick = { getPastebin }  className="shadow-xl bg-green-400 p-3 text-white w-11/12 lg:w-8/12 hover:bg-green-500 rounded border-l-8 border-red-400" >Get Pastebin</button>
                 <p className = "shadow-xl w-11/12 lg:w-8/12 px-10 py-5 m-2 text-lg focus:outline-none rounded border-l-8 border-red-400">{ readbinTitle }</p>
                 <textarea className = "shadow-xl w-11/12 h-full lg:w-8/12 max-w-lg px-10 py-5 m-2 text-lg focus:outline-none rounded border-l-8 border-red-400 overflow-x-hidden" value = { readbinContent  } readOnly></textarea>
+                {
+                    readbinContent !== '' && readbinContent !== 'No such paste' &&
+                    <button onClick = { downloadPastebin }  className="shadow-xl bg-purple-400 p-3 text-white w-11/12 lg:w-8/12 hover:bg-purple-500 rounded border-l-8 border-red-400" >Download</button>
+                }
             </div>
         </div>
         </>
