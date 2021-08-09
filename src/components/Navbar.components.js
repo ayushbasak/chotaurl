@@ -8,7 +8,7 @@ const Navbar = ()=>{
                         <img src="favicon-sub.png" alt="favicon" className="w-12 h-12 m-3"></img>
                         ChotaURL
                         </span>
-                    <span className = "text-lg">URL shortener / obfuscater </span>
+                    <span className = "text-lg">URL shortener & Pastebin </span>
             </nav>
         </Link>
     );

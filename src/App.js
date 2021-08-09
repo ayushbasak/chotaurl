@@ -58,6 +58,7 @@ const App = ()=>{
     <div className="h-screen">
       <Router>
         <Navbar />
+        <Footer />
         <>
           <Switch>
             <Route path='/metrics'>
@@ -72,8 +73,7 @@ const App = ()=>{
                       validity={validity}/>
             </Route>
           </Switch>
-          </>
-        <Footer />
+        </>
       </Router>
     </div>
   );
