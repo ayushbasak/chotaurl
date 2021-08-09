@@ -75,6 +75,11 @@ const Pastebin = ()=>{
         // document.removeChild(a);
     }
 
+    const createShareText = (e)=>{
+        const shareText = `\nHey!\nI just created a pastebin for you!\nCode: ${recievedURL}\nPaste it in Readbin: https://chotaurl.vercel.app/Pastebin`
+        navigator.clipboard.writeText(shareText)
+    }
+
     return (
         <>
         <div className="flex flex-col lg:flex-row jusitify-between items-evenly p-2 h-auto lg:h-screen">
@@ -93,6 +98,7 @@ const Pastebin = ()=>{
                                 { recievedURL }
                             </a>
                             <img src="copy.svg" alt = "copy" className="mx-5 w-10 h-10 p-3 cursor-pointer hover:bg-yellow-300 rounded-xl" onClick={copy}></img>
+                            <img src="share.svg" className="mx-5 w-10 h-10 p-3 cursor-pointer hover:bg-yellow-300 rounded-xl" alt="send" onClick={createShareText}/>
                         </div>
                 }  
                 {
