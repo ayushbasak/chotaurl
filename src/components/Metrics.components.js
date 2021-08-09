@@ -47,8 +47,8 @@ const Metrics = ()=>{
                 </div>
             </div>
             :
-            <div className="flex flex-col lg:flex-row h-4/6 justify-evenly items-center bg-green-100">
-                <span className="p-5 m-3 bg-blue-400 text-white" id="loading">Loading</span>
+            <div className="flex flex-col lg:flex-row h-4/6 justify-evenly items-center bg-indigo-100">
+                <span className="p-5 m-3 bg-purple-400 text-white" id="loading">Loading</span>
             </div>
         }
         </>

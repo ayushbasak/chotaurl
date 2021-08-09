@@ -1,7 +1,7 @@
 import  { Link} from 'react-router-dom'
 const Footer = ()=>{
     return (
-        <footer className="bg-gray-500 p-0.5 flex flex-col justify-evenly items-center lg:flex-row">
+        <footer className="bg-indigo-500 p-0.5 flex flex-col justify-evenly items-center lg:flex-row">
             <div className="flex flex-row m-5">
                 <Link to='/metrics'>
                     <span className="m-6 p-2 hover:bg-gray-800 font-bold text-white rounded-lg">Metrics</span>
