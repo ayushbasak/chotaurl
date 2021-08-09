@@ -36,7 +36,7 @@
     transform: rotate(360deg);
   }
 } */
-#loading{
+/* #loading{
   padding:2px 5rem;
   animation-name: loading;
   animation-duration: .2s;
@@ -73,4 +73,4 @@
     border-bottom-color: transparent;
     border-right-color: white;
   }
-}
+} */
