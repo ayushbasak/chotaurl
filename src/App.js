@@ -33,8 +33,6 @@ const App = ()=>{
     const save = {"url": curr}
     if(flavor !== "")
       save['flavor'] = flavor
-    
-      console.log(save)
     const result = await axios.post('https://ctlnk.herokuapp.com/q/', save)
                             .catch(err => console.log(err))
     if(result === undefined){

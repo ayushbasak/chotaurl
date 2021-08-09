@@ -31,7 +31,6 @@ const Pastebin = ()=>{
             setRecievedURL(data.url.split('https://ctlnk.herokuapp.com/p/')[1])
             setValidity(Number(data.epoch))
         }
-        console.log(data)
     }
 
     const handleReadbinLink = (e)=>{
@@ -42,10 +41,8 @@ const Pastebin = ()=>{
         if(readbinLink.length > 0){
             let link = readbinLink;
             link = 'https://ctlnk.herokuapp.com/p/' + link
-            console.log(link)
             await axios.get(link)
                 .then(response => {
-                    console.log(response.data)
                     if(response.data.errorId === 2){
                         setReadbinTitle('TITLE')
                         setReadbinContent('No such paste')
@@ -76,15 +73,15 @@ const Pastebin = ()=>{
                 <button onClick = { submit }  className="shadow-xl bg-green-400 p-3 text-white w-11/12 lg:w-8/12 hover:bg-green-500 rounded border-l-8 border-red-400">Create</button>
                 {
                     recievedURL && 
-                        <p className=" shadow-xl bg-yellow-400 p-7 w-80 lg:w-8/12 text-center m-2 font-bold text-sm lg:text-xl text-white rounded flex flex-col lg:flex-row justify-center items-center lg:flex-shrink-0 border-l-8 border-red-400">
-                            <span className="p-3">
+                        <div className=" shadow-xl bg-yellow-400 p-7 w-80 lg:w-8/12 text-center m-2 font-bold text-sm lg:text-xl text-white rounded flex flex-col lg:flex-row justify-center items-center lg:flex-shrink-0 border-l-8 border-red-400">
+                            <span className="p-1">
                                 Share this code: 
                             </span>
                             <a href = { recievedURL } >
                                 { recievedURL }
                             </a>
                             <img src="copy.svg" alt = "copy" className="mx-5 w-10 h-10 p-3 cursor-pointer hover:bg-yellow-300 rounded-xl" onClick={copy}></img>
-                        </p>
+                        </div>
                 }  
                 {
                     validity !== 0?
