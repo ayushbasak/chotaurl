@@ -87,10 +87,10 @@ const Pastebin = ()=>{
                 <span className ="shadow bg-gray-800 text-white w-11/12 lg:w-8/12 py-4 m-2 text-center rounded border-l-8 border-red-400">Pastebin</span>
                 <input onChange = { handleTitle  }  className = "shadow-xl w-11/12 lg:w-8/12 px-10 py-5 m-2 text-lg focus:outline-none rounded border-l-8 border-red-400" placeholder = "Title"></input>
                 <textarea onChange = { handleContent }className = "shadow-xl w-11/12 h-full lg:w-8/12 px-10 py-5 m-2 text-lg focus:outline-none rounded border-l-8 border-red-400" placeholder = "Content"></textarea>
-                <button onClick = { submit }  className="shadow-xl bg-green-400 p-3 text-white w-11/12 lg:w-8/12 hover:bg-green-500 rounded border-l-8 border-red-400">Create</button>
+                <button onClick = { submit }  className="shadow-xl bg-green-500 p-3 text-white w-11/12 lg:w-8/12 hover:bg-green-600 rounded border-l-8 border-red-400">Create</button>
                 {
                     recievedURL && 
-                        <div className=" shadow-xl bg-yellow-400 p-7 w-80 lg:w-8/12 text-center m-2 font-bold text-sm lg:text-xl text-white rounded flex flex-col lg:flex-row justify-center items-center lg:flex-shrink-0 border-l-8 border-red-400">
+                        <div className=" shadow-xl bg-indigo-400 p-7 w-80 lg:w-8/12 text-center m-2 font-bold text-sm lg:text-xl text-white rounded flex flex-col lg:flex-row justify-center items-center lg:flex-shrink-0 border-l-8 border-red-400">
                             <span className="p-1">
                                 Share this code: 
                             </span>
@@ -109,12 +109,12 @@ const Pastebin = ()=>{
             <div className = "flex flex-col w-full justify-center items-center">
                 <span className ="shadow bg-gray-800 text-white w-11/12 lg:w-8/12 py-4 m-2 text-center rounded border-l-8 border-red-400">Readbin</span>
                 <input onChange = { handleReadbinLink } className = "shadow-xl w-11/12 lg:w-8/12 px-10 py-5 m-2 text-lg focus:outline-none rounded border-l-8 border-red-400" placeholder = "Pastebin link or code"></input>
-                <button onClick = { getPastebin }  className="shadow-xl bg-green-400 p-3 text-white w-11/12 lg:w-8/12 hover:bg-green-500 rounded border-l-8 border-red-400" >Get Pastebin</button>
+                <button onClick = { getPastebin }  className="shadow-xl bg-green-500 p-3 text-white w-11/12 lg:w-8/12 hover:bg-green-600 rounded border-l-8 border-red-400" >Get Pastebin</button>
                 <p className = "shadow-xl w-11/12 lg:w-8/12 px-10 py-5 m-2 text-lg focus:outline-none rounded border-l-8 border-red-400">{ readbinTitle }</p>
                 <textarea className = "shadow-xl w-11/12 h-full lg:w-8/12 max-w-lg px-10 py-5 m-2 text-lg focus:outline-none rounded border-l-8 border-red-400 overflow-x-hidden" value = { readbinContent  } readOnly></textarea>
                 {
                     readbinContent !== '' && readbinContent !== 'No such paste' &&
-                    <button onClick = { downloadPastebin }  className="shadow-xl bg-purple-400 p-3 text-white w-11/12 lg:w-8/12 hover:bg-purple-500 rounded border-l-8 border-red-400" >Download</button>
+                    <button onClick = { downloadPastebin }  className="shadow-xl bg-indigo-400 p-3 text-white w-11/12 lg:w-8/12 hover:bg-purple-500 rounded border-l-8 border-red-400" >Download</button>
                 }
             </div>
         </div>

@@ -8,6 +8,7 @@ import Metrics from './components/Metrics.components'
 
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import Pastebin from './components/Pastebin.components';
+import About from './components/About.components';
 
 const App = ()=>{
   // current value of URL input
@@ -64,6 +65,11 @@ const App = ()=>{
             </Route>
             <Route path='/Pastebin' exact>
                 <Pastebin />
+            </Route>
+            <Route path='/About' exact>
+                <div className="flex flex-row justify-center items-center">
+                  <About />
+                </div>
             </Route>
             <Route path='/'>
               <Main chandler={handleInputChange} flavorHandler = {handleFlavorChange}

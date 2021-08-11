@@ -1,6 +1,6 @@
 const About = ()=>{
     return (
-        <div className="w-full lg:w-5/12 md:w-7/12 bg-indigo-400 h-auto p-4 lg:m-3 py-10 rounded-lg shadow-xl text-white text-center">
+        <div className="w-11/12 lg:w-5/12 md:w-7/12 bg-indigo-400 h-auto p-4 m-2 lg:m-3 py-10 rounded-lg shadow-xl text-white text-center">
             <h1 className="text-3xl my-2 p-2 border-2 rounded-xl">About</h1>
             <p className="text-xl">This app uses the <strong>ChotaURL-api</strong></p>
             <span className="m-2 p-2">ChotaURL-api is a rest api I created using ExpressJs, which uses PostgreSQL
