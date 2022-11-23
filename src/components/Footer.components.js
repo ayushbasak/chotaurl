@@ -17,7 +17,7 @@ const Footer = ()=>{
                 </Link>
                 
             </div>
-            <span className="text-sm text-white m-4 lg:m-0">made with ♥ by  
+            {/* <span className="text-sm text-white m-4 lg:m-0">made with ♥ by  
                 <a  className ="font-bold bg-purple-400 m-1 p-2 hover:bg-gray-800 rounded"  href ="https://github.com/ayushbasak/">@ayushbasak</a>
             </span>
             <span className="text-sm text-white m-4 lg:m-4">
@@ -25,7 +25,7 @@ const Footer = ()=>{
                 <a className="m-1 p-2 bg-purple-400 hover:bg-gray-800 font-bold rounded" href="https://github.com/ayushbasak/chotaurl">
                     github
                 </a>
-            </span>
+            </span> */}
         </footer>
     );
 }

@@ -10,6 +10,9 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import Pastebin from './components/Pastebin.components';
 import About from './components/About.components';
 
+import { API_URI } from './config';
+import BaseFooter from './components/BaseFooter';
+
 const App = ()=>{
   // current value of URL input
   const [curr, setCurr] = useState('')
@@ -34,18 +37,19 @@ const App = ()=>{
     const save = {"url": curr}
     if(flavor !== "")
       save['flavor'] = flavor
-    const result = await axios.post('https://ctlnk.herokuapp.com/q/', save)
+    const result = await axios.post(API_URI + '/q/', save)
                             .catch(err => console.log(err))
     if(result === undefined){
-      return
+      return;
     }
+    console.log(result);
     if(result.data.errorId === 2 || result.data.errorId === 1){
       setFinal(result.data.error)
       setValidity(0)
     }
     else{
-      setFinal(result.data.shortenedURL)
-      setValidity(result.data.epoch)
+      setFinal(result.data.url)
+      setValidity(Number(result.data.epoch))
     }
   }
   const copy = ()=>{
@@ -55,30 +59,33 @@ const App = ()=>{
 
   return (
     <div className="h-screen">
-      <Router>
-        <Navbar />
-        <Footer />
-        <>
-          <Switch>
-            <Route path='/metrics'>
-                <Metrics />
-            </Route>
-            <Route path='/Pastebin' exact>
-                <Pastebin />
-            </Route>
-            <Route path='/About' exact>
-                <div className="flex flex-row justify-center items-center">
-                  <About />
-                </div>
-            </Route>
-            <Route path='/'>
-              <Main chandler={handleInputChange} flavorHandler = {handleFlavorChange}
-                    post={postURL} final={final} copy={copy} flavor={flavor}
-                      validity={validity}/>
-            </Route>
-          </Switch>
-        </>
-      </Router>
+      <div className='h-full'>
+        <Router>
+          <Navbar />
+          <Footer />
+          <>
+            <Switch>
+              <Route path='/metrics'>
+                  <Metrics />
+              </Route>
+              <Route path='/Pastebin' exact>
+                  <Pastebin />
+              </Route>
+              <Route path='/About' exact>
+                  <div className="flex flex-row justify-center items-center">
+                    <About />
+                  </div>
+              </Route>
+              <Route path='/'>
+                <Main chandler={handleInputChange} flavorHandler = {handleFlavorChange}
+                      post={postURL} final={final} copy={copy} flavor={flavor}
+                        validity={validity}/>
+              </Route>
+            </Switch>
+          </>
+          <BaseFooter />
+        </Router>
+      </div>
     </div>
   );
 }

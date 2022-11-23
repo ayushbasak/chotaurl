@@ -2,6 +2,7 @@ import axios from 'axios'
 import { useState } from 'react'
 import Validity from './Validity.components'
 import CryptoJs from 'crypto-js'
+import { API_URI } from '../config';
 const Pastebin = ()=>{
     const [title, setTitle] = useState('')
     const [content, setContent] = useState('')
@@ -32,11 +33,13 @@ const Pastebin = ()=>{
     }
 
     const submit = async ()=>{
-        const { data } = await axios.post('https://ctlnk.herokuapp.com/p/', {
+        console.log('submitted');
+        const { data } = await axios.post(API_URI + '/p/', {
             title: title,
             content: content,
             passcode: passcode
         })
+        console.log(data);
         if(data.code !== undefined){
             console.log(data.code)
             setPasscode(data.passcode)
@@ -56,7 +59,7 @@ const Pastebin = ()=>{
     const getPastebin = async ()=>{
         if(readbinLink.length > 0){
             let link = readbinLink;
-            link = 'https://ctlnk.herokuapp.com/p/' + link
+            link = API_URI + '/p/' + link
             await axios.get(link)
                 .then(response => {
                     if(response.data.errorId === 2){
