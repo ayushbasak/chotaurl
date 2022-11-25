@@ -155,7 +155,7 @@ const Pastebin = ()=>{
                     <button onClick = { decryptContent } className="shadow-xl bg-green-500  py-5 text-white w-11/12 lg:w-2/12 hover:bg-green-600 rounded border-l-8 border-red-400">Decrypt</button>
                 </div>
                 <p className = "shadow-xl w-11/12 lg:w-8/12 px-10 py-5 m-2 text-lg focus:outline-none rounded border-l-8 border-red-400">{ readbinTitle }</p>
-                <textarea className = "shadow-xl w-11/12 h-full lg:w-8/12 max-w-lg px-10 py-5 m-2 text-lg focus:outline-none rounded border-l-8 border-red-400 overflow-x-hidden" value = { readbinContent  } readOnly></textarea>
+                <textarea className = "shadow-xl w-11/12 h-full lg:w-8/12 px-10 py-5 m-2 text-lg focus:outline-none rounded border-l-8 border-red-400 overflow-x-hidden" value = { readbinContent  } readOnly></textarea>
                 {
                     readbinContent !== '' && readbinContent !== 'No such paste' &&
                     <button onClick = { downloadPastebin }  className="shadow-xl bg-indigo-400 p-3 text-white w-11/12 lg:w-8/12 hover:bg-purple-500 rounded border-l-8 border-red-400" >Download</button>

@@ -7,8 +7,8 @@ const About = ()=>{
                 to map your URLS to shortened URLS
             </span>
             <p className="bg-pink-600 p-3 m-3 rounded-xl">You may need to wait a few of seconds
-                before a URL is generated, this is because Heroku puts free dynos to sleep
-                after a few hours.
+                before a URL is generated, this is because Azure App Service puts free app to sleep
+                after a few minutes.
             </p>
 
             <p className="flex flex-col">Build your own URL shortener application using the 

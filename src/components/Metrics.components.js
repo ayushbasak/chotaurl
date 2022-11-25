@@ -26,7 +26,7 @@ const Metrics = ()=>{
         setFlavor(e.target.value)
     }
 
-    const getMetrics = async ()=>{
+    const getURLMetrics = async ()=>{
         try {
             const { data } = await axios.get(API_URI + '/about/q/' + flavor)
             const dates = compileDateMetrics(data);
@@ -36,7 +36,6 @@ const Metrics = ()=>{
             console.log(error);
         }
     }
-
     // function to convert array of epoch times to date strings
     const compileDateMetrics = (data) => {
         let dates = [];
@@ -92,7 +91,7 @@ const Metrics = ()=>{
                     <div className="flex flex-col w-full justify-evenly items-center h-5/6">
                         <span className ="shadow bg-gray-800 text-white w-11/12 lg:w-8/12 py-4 m-2 text-center rounded border-l-8 border-red-400">URL Metrics</span>
                         <input onChange={flavorHandler} className = "shadow-xl w-11/12 lg:w-8/12 px-10 py-5 m-2 text-lg focus:outline-none rounded border-l-8 border-red-400" placeholder = "Enter URL code / flavor"></input>
-                        <button onClick={getMetrics} className="shadow-xl bg-green-500 p-3 text-white w-11/12 lg:w-8/12 hover:bg-green-600 rounded border-l-8 border-red-400">Get Metrics</button>
+                        <button onClick={getURLMetrics} className="shadow-xl bg-green-500 p-3 text-white w-11/12 lg:w-8/12 hover:bg-green-600 rounded border-l-8 border-red-400">Get Metrics</button>
                         {/* <textarea className="shadow-xl w-11/12 lg:w-8/12 p-5 m-2 text-lg focus:outline-none rounded border-l-8 border-red-400 h-full" placeholder = "Metrics will be displayed here" value={JSON.stringify(urlMetrics)}></textarea> */}
                         {
                             urlMetrics.length > 0 ?

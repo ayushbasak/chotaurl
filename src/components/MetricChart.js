@@ -11,7 +11,7 @@ const MetricChart = ({ data }) => {
     return (
         <div className='flex flex-col w-full justify-center items-center p-10'>
             <LineChart
-                width={800}
+                width={600}
                 height={300}
                 data={data}
                 margin={{

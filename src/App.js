@@ -12,6 +12,7 @@ import About from './components/About.components';
 
 import { API_URI } from './config';
 import BaseFooter from './components/BaseFooter';
+import Spacer from './components/Spacer';
 
 const App = ()=>{
   // current value of URL input
@@ -83,9 +84,10 @@ const App = ()=>{
               </Route>
             </Switch>
           </>
-          <BaseFooter />
         </Router>
+        <Spacer />
       </div>
+      <BaseFooter />
     </div>
   );
 }
